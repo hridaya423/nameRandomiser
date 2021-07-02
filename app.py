@@ -14,4 +14,4 @@ def home():
     return render_template('index.html', name=choice(students))
 
 
-app.run(debug=True)
+app.run()

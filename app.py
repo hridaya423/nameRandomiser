@@ -13,5 +13,5 @@ def home():
                 'Aparna', 'Maya', 'Gnanedra', 'Pramita']
     return render_template('index.html', name=choice(students))
 
-
-app.run()
+if __name__ == "__main__":
+    app.run()

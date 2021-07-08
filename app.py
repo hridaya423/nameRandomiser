@@ -5,12 +5,14 @@ from flask_bootstrap import Bootstrap
 app = Flask(__name__, template_folder='')
 Bootstrap(app)
 
+page_views = 1
+
 @app.route('/')
 def home():
-    page_views = 1
     students = ['Hridaya', 'Sadhana', 'Rajaharshini', 'Priyadarshan', 'Priyam', 'Mohit', 'Sunidhi', 'Seherish',
                 'Dikshith', 'Aradhana', 'Aarav', 'Siyona', 'Apparnachar', 'Nikash', 'Darshan', 'Ashwini', 'Srinidhi',
                 'Aparna', 'Maya', 'Gnanedra', 'Pramita']
+    global page_views
     page_views += 1
     return render_template('index.html', name=choice(students), views=page_views)
 

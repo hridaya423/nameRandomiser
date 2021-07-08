@@ -20,7 +20,7 @@ def home():
     students.remove(student)
     global page_views
     page_views += 1
-    return render_template('index.html', name=student, views=page_views)
+    return render_template('index.html', name=student, views=page_views, students=str(students))
 
 if __name__ == "__main__":
     app.run()

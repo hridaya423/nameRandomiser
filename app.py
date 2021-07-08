@@ -12,9 +12,15 @@ def home():
     students = ['Hridaya', 'Sadhana', 'Rajaharshini', 'Priyadarshan', 'Priyam', 'Mohit', 'Sunidhi', 'Seherish',
                 'Dikshith', 'Aradhana', 'Aarav', 'Siyona', 'Apparnachar', 'Nikash', 'Darshan', 'Ashwini', 'Srinidhi',
                 'Aparna', 'Maya', 'Gnanedra', 'Pramita']
+    student = choice(students)
+    students.remove(student)
+    if len(students) == 0:
+        students.append('Hridaya', 'Sadhana', 'Rajaharshini', 'Priyadarshan', 'Priyam', 'Mohit', 'Sunidhi', 'Seherish',
+                'Dikshith', 'Aradhana', 'Aarav', 'Siyona', 'Apparnachar', 'Nikash', 'Darshan', 'Ashwini', 'Srinidhi',
+                'Aparna', 'Maya', 'Gnanedra', 'Pramita')
     global page_views
     page_views += 1
-    return render_template('index.html', name=choice(students), views=page_views)
+    return render_template('index.html', name=student, views=page_views)
 
 if __name__ == "__main__":
     app.run()
